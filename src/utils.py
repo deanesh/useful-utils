@@ -1,3 +1,63 @@
+'''
+Context: Give a python program to take a folder & iterate all the folders & files which contain python files
+         
+Input:
+    folder
+	|
+	|----subfolder-1
+	       |
+		   |---- pyfile.py
+	|----subfolder-2
+	       |
+		   |---- pyfile.py
+
+Output:
+  Give a compressed version of python which ignores folders which are not relevant for repo or logical flow of folder
+  Note: if sub folder is git repo inside main folder then below structure should be for each (sub folder)git repo instead of folder meaning
+  folder/ (non_git repo)
+     subfolder-1/ (git repo)
+	 subfolder-2 (git repo)
+
+  Then below structure has to be for each repo inside main folder
+  
+  -----------------------------------------------------------   
+  Folder Structure which should also include non python files
+  -----------------------------------------------------------
+    
+	folder
+	|
+	|----subfolder-1
+	       |
+		   |---- pyfile.py
+	|----subfolder-2
+	       |
+		   |---- pyfile.py
+    |---requirements.txt
+	
+  ----------------------------------------------------------------
+  output.txt1 file with below data should copy data of python files only
+   Note: Same applies here Then below structure has to be for each repo inside main folder
+   # Folder Location: folder\subfolder-1 (if git repo)
+  ----------------------------------------------------------------
+
+   Files (subfolder-1)
+   -------------------------------------
+   # Folder Location: folder\subfolder-1
+     File Name: pyfile.py
+     ------------------------------------
+     File content in compressed format
+
+   .....
+   
+      -------------------------------------
+   # Folder Location: folder\subfolder-1\sub-subfolder-1\
+     File Name: pyfile.py
+     ------------------------------------
+
+
+'''
+
+
 import os
 
 IGNORE_DIRS = {
